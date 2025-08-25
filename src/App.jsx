@@ -1,8 +1,8 @@
-import Title from "./pages/Title.jsx"
+import Router from './Router.jsx'
 
 function App() {
   return (
-    <Title/>
+    <Router/>
   )
 }
 
