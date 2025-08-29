@@ -1,4 +1,18 @@
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+
 function Note() {
+    dayjs.extend(utc);
+    dayjs.extend(timezone);
+
+    const handleClick = () => {
+        const now = dayjs();
+        const timeInTokyo = now.tz('Asia/Tokyo');
+        const formatTimeInTokyo = timeInTokyo.format('YYYY/MM/DD'); 
+        console.log(formatTimeInTokyo);
+    }
+
     return(
         <div>
             <form action=''>
@@ -52,12 +66,12 @@ function Note() {
                         placeholder='ここに旅の感想を記入'
                     />
                 </div>
-
-               
             </form>
+            <div>
+                <button onClick={handleClick}>きろくする</button>
+            </div>
+
         </div>
-      
-      
     );
 };
 export default Note;
