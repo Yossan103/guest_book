@@ -1,21 +1,40 @@
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
+import { useForm } from "react-hook-form"
+import { supabase } from '../supabase';
+import { useState } from 'react';
 
 function Note() {
+    const {
+        handleSubmit,
+        formState: { errors },
+    } = useForm()
+
+    const [name, setName] = useState("");
+    const [title, setTitle] = useState("");
+    const [purpose, setPurpose] = useState("");
+    const [advice, setAdvice] = useState("");
+    const [review, setReview] = useState("");   
+    
+    const onSubmit = async () => {
+        const now = dayjs();
+        const timeInTokyo = now.tz('Asia/Tokyo');
+        const date = timeInTokyo.format('YYYY/MM/DD'); 
+        await supabase.from('Note').insert({ name, title, purpose, advice, review, date });
+        setName("");
+        setTitle("");
+        setPurpose("");
+        setAdvice("");
+        setReview("");
+    }
+
     dayjs.extend(utc);
     dayjs.extend(timezone);
 
-    const handleClick = () => {
-        const now = dayjs();
-        const timeInTokyo = now.tz('Asia/Tokyo');
-        const formatTimeInTokyo = timeInTokyo.format('YYYY/MM/DD'); 
-        console.log(formatTimeInTokyo);
-    }
-
     return(
         <div>
-            <form action=''>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <div>
                     <label htmlFor='name'>
                         名前
@@ -24,6 +43,8 @@ function Note() {
                         id='name'
                         type='text'
                         placeholder='ここに名前を記入'
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                     />
                 </div>
                 <div>
@@ -34,6 +55,8 @@ function Note() {
                         id='title'
                         type='text'
                         placeholder='ここにタイトルを記入'
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
                     />
                 </div>
                 <div>
@@ -44,6 +67,8 @@ function Note() {
                         id='purpose'
                         type='text'
                         placeholder='ここに旅の目的を記入'
+                        value={purpose}
+                        onChange={(e) => setPurpose(e.target.value)}
                     />
                 </div>
                 <div>
@@ -54,6 +79,8 @@ function Note() {
                         id='advice'
                         type='text'
                         placeholder='ここに旅のアドバイスを記入'
+                        value={advice}
+                        onChange={(e) => setAdvice(e.target.value)}
                     />
                 </div>
                   <div>
@@ -64,13 +91,12 @@ function Note() {
                         id='review'
                         type='text'
                         placeholder='ここに旅の感想を記入'
+                        value={review}
+                        onChange={(e) => setReview(e.target.value)}
                     />
                 </div>
+                <button type="submit">きろくする</button>
             </form>
-            <div>
-                <button onClick={handleClick}>きろくする</button>
-            </div>
-
         </div>
     );
 };
