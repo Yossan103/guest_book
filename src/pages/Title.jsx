@@ -18,13 +18,17 @@ function Title() {
             <div style={{color: '#483B3B', fontSize: 24, fontFamily: 'Inter', fontWeight: '400', wordWrap: 'break-word'}}>　</div>
         </div>
         <div className="titlePage">
-            <p className="title">旅のおもいで</p>
-            <Grid templateColumns="repeat(2, 1fr)" gap="6">
+            <p className="title">
+                旅のおもいで
+            
+            </p>
+                
+            <Grid templateColumns="repeat(2, 1fr)" gap="6" className="titleButton">
                 <GridItem colSpan={1}>
-                    <Link to='/note' ><Button colorPalette='orange' className="titleButton">これまでのきろく</Button></Link>
+                    <Link to='/note' ><Button colorPalette='orange' >これまでのきろく</Button></Link>
                 </GridItem>
                 <GridItem colSpan={1}>
-                    <Link to='/view'><Button colorPalette='orange' className="titleButton">きろくを残す</Button></Link>
+                    <Link to='/view'><Button colorPalette='orange'>きろくを残す</Button></Link>
                 </GridItem>
             </Grid>  
         </div>

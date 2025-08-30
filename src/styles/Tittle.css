@@ -7,6 +7,16 @@
 }
 
 .title {
-    font-size: 2rem;
+    color: #6D6262;
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
-.titleButton {width: 100%;}
+.titleButton {
+    width:100%;
+    position:fixed;
+    bottom: 150px;
+    justify-items: center;
+}
