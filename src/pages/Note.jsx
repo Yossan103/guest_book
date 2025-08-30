@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form"
 import { supabase } from '../supabase';
 import { useState } from 'react';
 import BackButton from '../components/BackButton';
-import { TbBackground } from 'react-icons/tb';
+import "../styles/Note.css"
 
 function Note() {
     const {
@@ -36,69 +36,71 @@ function Note() {
 
     return(
         // <div className="backGround">
-        <div style={{width: 390, height: 844, position: 'relative', background: '#F4ECE5', overflow: 'hidden'}}>
+        <div style={{width: "100vw", height: "100vh", position: 'relative', background: '#F4ECE5', overflow: 'hidden'}}>
             <div>
                 <BackButton />
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <div>
-                        <label htmlFor='name'>
-                            名前
-                        </label>
-                        <input
-                            id='name'
-                            type='text'
-                            placeholder='ここに名前を記入'
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor='title'>
-                            旅のタイトル
-                        </label>
-                        <input
-                            id='title'
-                            type='text'
-                            placeholder='ここにタイトルを記入'
-                            value={title}
-                            onChange={(e) => setTitle(e.target.value)}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor='purpose'>
-                            旅の目的
-                        </label>
-                        <input
-                            id='purpose'
-                            type='text'
-                            placeholder='ここに旅の目的を記入'
-                            value={purpose}
-                            onChange={(e) => setPurpose(e.target.value)}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor='advice'>
-                            旅のアドバイス
-                        </label>
-                        <input
-                            id='advice'
-                            type='text'
-                            placeholder='ここに旅のアドバイスを記入'
-                            value={advice}
-                            onChange={(e) => setAdvice(e.target.value)}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor='review'>
-                            旅の感想
-                        </label>
-                        <input
-                            id='review'
-                            type='text'
-                            placeholder='ここに旅の感想を記入'
-                            value={review}
-                            onChange={(e) => setReview(e.target.value)}
-                        />
+                    <div className='noteContent'>
+                        <div>
+                            <label htmlFor='name'>
+                                名前
+                            </label>
+                            <input
+                                id='name'
+                                type='text'
+                                placeholder='ここに名前を記入'
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor='title'>
+                                旅のタイトル
+                            </label>
+                            <input
+                                id='title'
+                                type='text'
+                                placeholder='ここにタイトルを記入'
+                                value={title}
+                                onChange={(e) => setTitle(e.target.value)}
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor='purpose'>
+                                旅の目的
+                            </label>
+                            <input
+                                id='purpose'
+                                type='text'
+                                placeholder='ここに旅の目的を記入'
+                                value={purpose}
+                                onChange={(e) => setPurpose(e.target.value)}
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor='advice'>
+                                旅のアドバイス
+                            </label>
+                            <input
+                                id='advice'
+                                type='text'
+                                placeholder='ここに旅のアドバイスを記入'
+                                value={advice}
+                                onChange={(e) => setAdvice(e.target.value)}
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor='review'>
+                                旅の感想
+                            </label>
+                            <input
+                                id='review'
+                                type='text'
+                                placeholder='ここに旅の感想を記入'
+                                value={review}
+                                onChange={(e) => setReview(e.target.value)}
+                            />
+                        </div>
                     </div>
                     <button type="submit">きろくする</button>
                 </form>
