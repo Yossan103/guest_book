@@ -1,0 +1,7 @@
+.pageSize{
+    width:100vw;
+    position:fixed;
+    bottom: 30px;
+    justify-items: center;
+    /* border: solid; */
+}
