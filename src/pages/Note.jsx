@@ -4,6 +4,7 @@ import timezone from 'dayjs/plugin/timezone';
 import { useForm } from "react-hook-form"
 import { supabase } from '../supabase';
 import { useState } from 'react';
+import BackButton from '../components/BackButton';
 
 function Note() {
     const {
@@ -34,6 +35,7 @@ function Note() {
 
     return(
         <div>
+            <BackButton />
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div>
                     <label htmlFor='name'>
