@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { supabase } from "../supabase";
 import "../styles/View.css";
 import Pagination from "../components/Pagenation";
+import BackButton2 from "../components/BackButton2";
 
 const PAGE_SIZE = 1;
 
@@ -53,6 +54,7 @@ export default function App() {
 
   return (
     <div className="wrap">
+      <BackButton2 />
       <header className="header">
         <span className="brand">旅のきろく</span>
       </header>
