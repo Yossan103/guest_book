@@ -5,4 +5,11 @@
     border-radius: 27px;
     background: #EDDED1;
     margin: 0 auto;
+    display: grid;
+    grid-template-rows: 80px 80px 80px 80px 80px;
+    gap: 10px;
+}
+
+.labelName{
+    font-size: 25px;
 }
