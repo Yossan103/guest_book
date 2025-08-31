@@ -1,3 +1,4 @@
+import { Button, Grid ,GridItem } from "@chakra-ui/react"
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
@@ -108,7 +109,11 @@ function Note() {
                                 />
                             </div>
                         </div>
-                        <button type="submit">きろくする</button>
+                        <div className="buttonContainer">
+                            <Button colorPalette='orange' type="submit" >きろくする</Button>
+                
+                         {/* <button className='button' type="submit">きろくする</button> */}
+                        </div>
                     </form>
                 </div>    
             </div>
