@@ -59,6 +59,7 @@ function Note() {
                                 <label htmlFor='title'>
                                     旅のタイトル
                                 </label>
+                                <br/>
                                 <input
                                     id='title'
                                     type='text'
@@ -71,6 +72,7 @@ function Note() {
                                 <label htmlFor='purpose'>
                                     旅の目的
                                 </label>
+                                <br/>
                                 <input
                                     id='purpose'
                                     type='text'
@@ -83,6 +85,7 @@ function Note() {
                                 <label htmlFor='advice'>
                                     旅のアドバイス
                                 </label>
+                                <br/>
                                 <input
                                     id='advice'
                                     type='text'
@@ -95,6 +98,7 @@ function Note() {
                                 <label htmlFor='review'>
                                     旅の感想
                                 </label>
+                                <br/>
                                 <input
                                     id='review'
                                     type='text'
