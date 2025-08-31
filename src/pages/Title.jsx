@@ -25,10 +25,10 @@ function Title() {
                 
             <Grid templateColumns="repeat(2, 1fr)" gap="6" className="titleButton">
                 <GridItem colSpan={1}>
-                    <Link to='/note' ><Button colorPalette='orange' >これまでのきろく</Button></Link>
+                    <Link to='/note' ><Button colorPalette='orange' >きろくを残す</Button></Link>
                 </GridItem>
                 <GridItem colSpan={1}>
-                    <Link to='/view'><Button colorPalette='orange'>きろくを残す</Button></Link>
+                    <Link to='/view'><Button colorPalette='orange'>これまでのきろく</Button></Link>
                 </GridItem>
             </Grid>  
         </div>
